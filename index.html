@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MyTemplate - html5_d3js</title>
+<link rel="stylesheet" href="css\style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css\bootstrap.css" type="text/css" media="screen" />
+<script src="js/jquery-1.10.2.js"></script>
+<!--<script type='text/javascript' src='https://www.google.com/jsapi'></script>-->
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.csv-0.71.js"></script>
+      
+	<script type="text/javascript">
+		var temp_name=['張陳李洪柯王莊郭廖林徐許牛馬蔡段梁馮朱楊黃彭吳沈江姜何蕭高嚴顏白鐘孫羅葉藍簡余宋賴'
+		,'昱偉政書仁碩振中立文典天智子祐佑信宜英敦廷啟天興國'
+		,'昌德淮明雄彰鴻憲凱傑良圻文銘彥智強宇達嘉鵬偉原華樺義廷峰興民瑞陽'];
+
+
+	</script>
+</head>
+<body>
+	<div id='input'>
+		<button id='time-enter'>產生</button>
+
+	</div>
+
+    <div id='show-name'>
+    	<div id='dscpt'>名字是：</div>
+    	<div id='result'></div>
+    </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#time-enter').click(function(){
+		//放按鈕事件
+		str_name='';
+		for (var i = 0; i < temp_name.length; i++) {
+			rand=Math.floor(Math.random()*temp_name[i].length);
+			str_name=str_name.concat(temp_name[i].charAt(rand));
+
+		};
+		$p=$("<p>"+str_name+"</p>").hide();
+		$('#result').prepend($p);
+		$p.show('fast');
+
+	});
+});
+</script>
+
+</body>
+</html>
